@@ -1,8 +1,9 @@
 <h1 align="center">
   GoBarber
   <hr />
-  <img alt="Dashboard" src=".git/assets/gobarbergit1.png" />
-  <img alt="Repository" src="..git/assets/gobarbergit2.png" />
+  <img alt="Login" src="./frontend/src/assets/gobarbergit1.png" />
+  <img alt="Dashboard" src="./frontend/src/assets/gobarbergit2.png" />
+  <img alt="Profile" src="./frontend/src/assets/gobarbergit3.png" />
   <hr />
 	<img alt="Logo" src="./frontend/src/assets/logo.svg" />
 </h1>
