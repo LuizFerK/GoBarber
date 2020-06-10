@@ -1,11 +1,11 @@
 <h1 align="center">
   GoBarber
   <hr />
-  <img alt="Login" src="./frontend/src/assets/gobarbergit1.png" />
-  <img alt="Dashboard" src="./frontend/src/assets/gobarbergit2.png" />
-  <img alt="Profile" src="./frontend/src/assets/gobarbergit3.png" />
+  <img alt="Login" src="./.github/login.png" />
+  <img alt="Dashboard" src="./.github/dashboard.png" />
+  <img alt="Profile" src="./.github/profile.png" />
   <hr />
-	<img alt="Logo" src="./frontend/src/assets/logo.svg" />
+	<img alt="Logo" src="./.github/logo.png" />
 </h1>
 <p align="center">
 	The application has been created to help people make appointments on your favorite barbershops. Created with Node.js ReactJS and React Native, all with Typescript.
