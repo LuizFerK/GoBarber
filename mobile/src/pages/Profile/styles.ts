@@ -12,6 +12,10 @@ export const BackButton = styled.TouchableOpacity`
 `;
 
 export const UserAvatarButton = styled.TouchableOpacity`
+  align-self: center;
+  width: 186px;
+  height: 186px;
+  border-radius: 98px;
   margin-top: 10px;
 `;
 
