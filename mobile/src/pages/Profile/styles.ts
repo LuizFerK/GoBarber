@@ -7,7 +7,16 @@ export const Container = styled.View`
   position: relative;
 `;
 
+export const Buttons = styled.View`
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
 export const BackButton = styled.TouchableOpacity`
+  margin-top: 40px;
+`;
+
+export const LogOutButton = styled.TouchableOpacity`
   margin-top: 40px;
 `;
 

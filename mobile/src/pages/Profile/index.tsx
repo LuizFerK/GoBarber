@@ -25,7 +25,9 @@ import {
   Title,
   UserAvatarButton,
   UserAvatar,
+  Buttons,
   BackButton,
+  LogOutButton,
 } from './styles';
 
 interface ProfileFormData {
@@ -37,7 +39,7 @@ interface ProfileFormData {
 }
 
 const Profile: React.FC = () => {
-  const { user, updateUser } = useAuth();
+  const { user, updateUser, signOut } = useAuth();
   const formRef = useRef<FormHandles>(null);
   const { goBack } = useNavigation();
 
@@ -49,6 +51,10 @@ const Profile: React.FC = () => {
   const handleGoBack = useCallback(() => {
     goBack();
   }, [goBack]);
+
+  const handleLogOut = useCallback(() => {
+    signOut();
+  }, [signOut]);
 
   const handleUpdateAvatar = useCallback(() => {
     ImagePicker.showImagePicker(
@@ -162,9 +168,15 @@ const Profile: React.FC = () => {
         showsVerticalScrollIndicator={false}
         overScrollMode="never"
       >
-        <BackButton onPress={handleGoBack}>
-          <Icon name="chevron-left" size={24} color="#999591" />
-        </BackButton>
+        <Buttons>
+          <BackButton onPress={handleGoBack}>
+            <Icon name="chevron-left" size={24} color="#999591" />
+          </BackButton>
+
+          <LogOutButton onPress={handleLogOut}>
+            <Icon name="log-out" size={24} color="#ff0000" />
+          </LogOutButton>
+        </Buttons>
 
         <UserAvatarButton onPress={handleUpdateAvatar}>
           <UserAvatar source={{ uri: user.avatar_url }} />
