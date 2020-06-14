@@ -135,7 +135,7 @@ const CreateAppointment: React.FC = () => {
       navigate('AppointmentCreated', { date: date.getTime() });
     } catch (err) {
       Alert.alert(
-        'Ooops, parece que ocorreu um erro!',
+        'Ooops, ocorreu um erro...',
         'Ocorreu um erro ao criar seu agendamento, por favor, tente novamente.',
       );
     }
@@ -265,11 +265,11 @@ const CreateAppointment: React.FC = () => {
             </SectionContent>
           </Section>
         </Schedule>
-
-        <CreateAppointmentButton onPress={handleCreateAppointment}>
-          <CreateAppointmentButtonText>Agendar</CreateAppointmentButtonText>
-        </CreateAppointmentButton>
       </Content>
+
+      <CreateAppointmentButton onPress={handleCreateAppointment}>
+        <CreateAppointmentButtonText>Agendar</CreateAppointmentButtonText>
+      </CreateAppointmentButton>
     </Container>
   );
 };
