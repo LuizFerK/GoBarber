@@ -70,6 +70,7 @@ const Dashboard: React.FC = () => {
 
       <ProvidersList
         data={providers}
+        overScrollMode="never"
         keyExtractor={(provider) => provider.id}
         ListHeaderComponent={
           <ProvidersListTitle>Cabeleireiros</ProvidersListTitle>

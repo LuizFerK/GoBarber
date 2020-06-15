@@ -1,13 +1,5 @@
 import React, { useCallback, useRef } from 'react';
-import {
-  Image,
-  View,
-  ScrollView,
-  KeyboardAvoidingView,
-  Platform,
-  TextInput,
-  Alert,
-} from 'react-native';
+import { Image, View, TextInput, Alert, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 import { useNavigation } from '@react-navigation/native';
 import { Form } from '@unform/mobile';
@@ -22,6 +14,7 @@ import Button from '../../components/Button';
 import logoImg from '../../assets/logo.png';
 
 import {
+  KeyboardAvoidingContainer,
   Container,
   Title,
   ForgotPassword,
@@ -80,14 +73,9 @@ const SignIn: React.FC = () => {
 
   return (
     <>
-      <KeyboardAvoidingView
-        style={{ flex: 1 }}
-        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-        enabled
-      >
+      <KeyboardAvoidingContainer>
         <ScrollView
-          keyboardShouldPersistTaps="handled"
-          contentContainerStyle={{ flex: 1 }}
+          contentContainerStyle={{ flex: 1, justifyContent: 'center' }}
         >
           <Container>
             <Image source={logoImg} />
@@ -138,7 +126,7 @@ const SignIn: React.FC = () => {
             </ForgotPassword>
           </Container>
         </ScrollView>
-      </KeyboardAvoidingView>
+      </KeyboardAvoidingContainer>
       <CreateAccountButton onPress={() => navigation.navigate('SignUp')}>
         <Icon name="log-in" size={20} color="#ff9000" />
         <CreateAccountButtonText>Criar uma conta</CreateAccountButtonText>

@@ -163,34 +163,34 @@ const Profile: React.FC = () => {
 
   return (
     <Container>
-      <ScrollView
-        keyboardShouldPersistTaps="handled"
-        showsVerticalScrollIndicator={false}
-        overScrollMode="never"
+      <KeyboardAvoidingView
+        style={{ flex: 1 }}
+        behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+        enabled
       >
-        <Buttons>
-          <BackButton onPress={handleGoBack}>
-            <Icon name="chevron-left" size={24} color="#999591" />
-          </BackButton>
-
-          <LogOutButton onPress={handleLogOut}>
-            <Icon name="log-out" size={24} color="#ff0000" />
-          </LogOutButton>
-        </Buttons>
-
-        <UserAvatarButton onPress={handleUpdateAvatar}>
-          <UserAvatar source={{ uri: user.avatar_url }} />
-        </UserAvatarButton>
-
-        <View>
-          <Title>Meu perfil</Title>
-        </View>
-
-        <KeyboardAvoidingView
-          style={{ flex: 1 }}
-          behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-          enabled
+        <ScrollView
+          keyboardShouldPersistTaps="handled"
+          showsVerticalScrollIndicator={false}
+          overScrollMode="never"
         >
+          <Buttons>
+            <BackButton onPress={handleGoBack}>
+              <Icon name="chevron-left" size={24} color="#999591" />
+            </BackButton>
+
+            <LogOutButton onPress={handleLogOut}>
+              <Icon name="log-out" size={24} color="#ff0000" />
+            </LogOutButton>
+          </Buttons>
+
+          <UserAvatarButton onPress={handleUpdateAvatar}>
+            <UserAvatar source={{ uri: user.avatar_url }} />
+          </UserAvatarButton>
+
+          <View>
+            <Title>Meu perfil</Title>
+          </View>
+
           <Form initialData={user} ref={formRef} onSubmit={handleSignUp}>
             <Input
               autoCapitalize="words"
@@ -254,6 +254,7 @@ const Profile: React.FC = () => {
             />
 
             <Button
+              style={{ marginBottom: 30 }}
               onPress={() => {
                 formRef.current?.submitForm();
               }}
@@ -261,8 +262,8 @@ const Profile: React.FC = () => {
               Confirmar mudanças
             </Button>
           </Form>
-        </KeyboardAvoidingView>
-      </ScrollView>
+        </ScrollView>
+      </KeyboardAvoidingView>
     </Container>
   );
 };

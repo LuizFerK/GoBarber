@@ -30,9 +30,17 @@ const AppointmentCreated: React.FC = () => {
   }, [reset]);
 
   const formatedDate = useMemo(() => {
-    return format(date, "EEEE', dia' dd 'de' MMMM 'de' yyyy 'às' HH:mm'h'", {
-      locale: ptBR,
-    });
+    const dateFormated = format(
+      date,
+      "EEEE', dia' dd 'de' MMMM 'de' yyyy 'às' HH:mm'h'",
+      {
+        locale: ptBR,
+      },
+    );
+
+    const caracter = dateFormated[0];
+
+    return dateFormated.replace(caracter, caracter.toUpperCase());
   }, [date]);
 
   return (
