@@ -1,17 +1,19 @@
 import styled from 'styled-components/native';
-import { Platform } from 'react-native';
 import { getBottomSpace } from 'react-native-iphone-x-helper';
 
-export const KeyboardAvoidingContainer = styled.KeyboardAvoidingView.attrs({
-  behavior: Platform.OS === 'ios' ? 'padding' : 'height',
-})`
+export const Container = styled.View`
   flex: 1;
   justify-content: center;
 `;
 
-export const Container = styled.View`
-  padding: 0 30px;
-  align-items: center;
+export const Content = styled.View`
+  flex: 1;
+  justify-content: center;
+  padding: 30px 30px 0;
+`;
+
+export const Logo = styled.Image`
+  align-self: center;
 `;
 
 export const Title = styled.Text`
@@ -19,6 +21,7 @@ export const Title = styled.Text`
   color: #f4ede8;
   font-family: 'RobotoSlab-Medium';
   margin: 64px 0 24px;
+  text-align: center;
 `;
 
 export const ForgotPassword = styled.TouchableOpacity`
@@ -29,6 +32,7 @@ export const ForgotPasswordText = styled.Text`
   color: #f4ede8;
   font-size: 16px;
   font-family: 'RobotoSlab-Regular';
+  text-align: center;
 `;
 
 export const CreateAccountButton = styled.TouchableOpacity`
