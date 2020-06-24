@@ -1,17 +1,31 @@
 import React from 'react';
-import { render } from 'react-native-testing-library';
+import { render, fireEvent, waitFor } from 'react-native-testing-library';
 
 import SignIn from '../../pages/SignIn';
 
+const mockedNavigate = jest.fn();
+
 jest.mock('@react-navigation/native', () => ({
-  useNavigation: jest.fn(),
+  useNavigation: () => ({
+    navigate: mockedNavigate,
+  }),
 }));
 
 describe('SignIn page', () => {
-  it('should contain email/password inputs', () => {
-    const { getByPlaceholder } = render(<SignIn />);
+  it('should be able to sign in', async () => {
+    const { getByText, getByPlaceholder } = render(<SignIn />);
 
-    expect(getByPlaceholder('E-mail')).toBeTruthy();
-    expect(getByPlaceholder('Senha')).toBeTruthy();
+    const emailField = getByPlaceholder('E-mail');
+    const passwordField = getByPlaceholder('Senha');
+    const buttonElement = getByText('Entrar');
+
+    fireEvent.changeText(emailField, 'johndoe@example.com');
+    fireEvent.changeText(passwordField, '123456');
+
+    fireEvent.press(buttonElement);
+
+    await waitFor(() => {
+      expect(mockedNavigate).toHaveBeenCalledWith('SignUp');
+    });
   });
 });
