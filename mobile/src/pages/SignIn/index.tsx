@@ -135,12 +135,12 @@ const SignIn: React.FC = () => {
               <ForgotPasswordText>Esqueci minha senha</ForgotPasswordText>
             </ForgotPassword>
           </Content>
-          <CreateAccountButton onPress={() => navigation.navigate('SignUp')}>
-            <Icon name="log-in" size={20} color="#ff9000" />
-            <CreateAccountButtonText>Criar uma conta</CreateAccountButtonText>
-          </CreateAccountButton>
         </ScrollView>
       </KeyboardAvoidingView>
+      <CreateAccountButton onPress={() => navigation.navigate('SignUp')}>
+        <Icon name="log-in" size={20} color="#ff9000" />
+        <CreateAccountButtonText>Criar uma conta</CreateAccountButtonText>
+      </CreateAccountButton>
     </Container>
   );
 };
