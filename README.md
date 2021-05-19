@@ -8,19 +8,19 @@
 
 <p align="center">
 	<a href="https://github.com/LuizFerK">
-		<img alt="Author" src="https://img.shields.io/badge/author-Luiz%20Fernando-FF872C?style=flat" />
+		<img alt="Author" src="https://img.shields.io/badge/author-Luiz%20Fernando-8E54E9?style=flat" />
 	</a>
 	<a href="#">
-		<img alt="Languages" src="https://img.shields.io/github/languages/count/LuizFerK/GoBarber?color=%23FF872C&style=flat-" />
+		<img alt="Languages" src="https://img.shields.io/github/languages/count/LuizFerK/GoBarber?color=8E54E9&style=flat" />
 	</a>
 	<a href="hhttps://github.com/LuizFerK/GoBarber/stargazers">
-		<img alt="Stars" src="https://img.shields.io/github/stars/LuizFerK/GoBarber?color=FF872C&style=flat" />
+		<img alt="Stars" src="https://img.shields.io/github/stars/LuizFerK/GoBarber?color=8E54E9&style=flat" />
 	</a>
 	<a href="https://github.com/LuizFerK/GoBarber/network/members">
-		<img alt="Forks" src="https://img.shields.io/github/forks/LuizFerK/GoBarber?color=%23FF872C&style=flat" />
+		<img alt="Forks" src="https://img.shields.io/github/forks/LuizFerK/GoBarber?color=8E54E9&style=flat" />
 	</a>
 	<a href="https://github.com/LuizFerK/GoBarber/graphs/contributors">
-		<img alt="Contributors" src="https://img.shields.io/github/contributors/LuizFerK/GoBarber?color=FF872C&style=flat" />
+		<img alt="Contributors" src="https://img.shields.io/github/contributors/LuizFerK/GoBarber?color=8E54E9&style=flat" />
 	</a>
 </p>
 
@@ -60,23 +60,23 @@
 ### Web
 
 - See all the clients appointments with you
-- Display the appointments in every day of the week
+- Display the appointments every day of the week
 - Update your profile
 
 ### Mobile
 
 - See all barbers
-- See the barber disponibility on the day/wekk
+- See the barber disponibility on the day/weak
 - Create an appointment with a barber
 - Update your profile
 
 # :wrench: Installation
 
 ### Required :warning:
-- Yarn
 - Node.js
-- Postgres database
+- Yarn
 - MongoDB database
+- Postgres database
 - Redis database
 
 ### SSH
@@ -91,39 +91,38 @@ In case you don't have an SSH key on your GitHub account, you can clone the proj
 
 ```git clone https://github.com/LuizFerK/GoBarber.git```
 
-**Both of this commands will generates a folder called GoBarber, with all the project**
+**Both of these commands will generate a folder called GoBarber, with all the project**
 
 # :bulb: Getting started
 
 ### Server
 
-1. Open the **server** folder an run ```yarn``` to install the dependencies;
-2. Rename the ```.env.example``` to ```.env``` and set a secret to your app;
-3. Rename the ```ormconfig.example.json``` to ```ormconfig.json``` and add your postgres **port**, **user** and **password** in the archive;
-4. Create a database named ```gobarber``` on your postgres;
-5. Run ```yarn typeorm migration:run``` to run the migrations to your database;
-6. Create a database named ```gobarber``` on your mongoDB;
-7. If you don't use the default port to mongoDB, you'll need to set the port on your ```ormconfig.json```;
-8. You don't need to configure the redis since you use the default port and don't have an password. If you have a password or use a diferent port, you'll need to set them on ```.env```;
-9. If all goes well, run ```yarn dev:server``` to open the development server on port 3333.
-10. **Extra:** if you want to use AWS SES, change the maildriver to ```ses``` on ```.env``` file (you'll also need to set your AWS keys to use the service); 
-11. **Extra:** if you want to use AWS S3, change the storagedriver to ```s3``` on ```.env``` file (you'll also need to set your AWS keys to use the service); 
+1. Open the **server** folder and run ```yarn``` to install the dependencies
+2. Rename the ```.env.example``` to ```.env``` and set a secret to your app
+3. Rename the ```ormconfig.example.json``` to ```ormconfig.json``` and add your postgres **port**, **user** and **password** in the archive
+4. Create a postgres database named ```gobarber```
+5. Run ```yarn typeorm migration:run``` to run the migrations to your database
+6. Create a mongoDB database named ```gobarber```
+7. If you don't use the default port to mongoDB, you'll need to set the port on your ```ormconfig.json```
+8. You don't need to configure the redis since you use the default port and don't have an password. If you have a password or use a diferent port, you'll need to set them on ```.env```
+9. If all goes well, run ```yarn dev:server``` to open the development server on port 3333
+10. **Extra:** if you want to use AWS SES, change the maildriver to ```ses``` on ```.env``` file (you'll also need to set your AWS keys to use the service)
+11. **Extra:** if you want to use AWS S3, change the storagedriver to ```s3``` on ```.env``` file (you'll also need to set your AWS keys to use the service)
 
 ### Web
 
-1. Open the **web** folder an run ```yarn``` to install the dependencies;
-2. Rename the ```.env.example``` to ```.env```;
+1. Open the **web** folder an run ```yarn``` to install the dependencies
+2. Rename the ```.env.example``` to ```.env```
 3. Run ```yarn start``` to open the web application on port 3000. (the app will open in your browser automatically)
 
 
 ### Mobile
 
-1. Open the folder and run ```yarn``` to install the dependencies;
-2. In ```src/services/api.ts``` change the baseURL for your IPv4 address: ```baseURL: 'http://YOUR-IPV4-ADDRESS:3333'```;
-> Example: ```baseURL: 'http://192.168.1.11:3333'```
-3. Connect your device to your computer and enable the [debugger mode](https://developer.android.com/studio/debug/dev-options) on the developer tools;
-4. Run ```yarn android``` to install the app on your **Android** or ```yarn ios``` to install on your **IOS**;
-5. Run ```yarn start``` to open the metro-bundler and get access to the server app on mobile. (close the app and open again)
+1. Open the folder and run ```yarn``` to install the dependencies
+2. In ```src/services/api.ts``` change the baseURL for your IPv4 address: ```baseURL: 'http://YOUR-IPV4-ADDRESS:3333'```
+3. Connect your device to your computer and enable the [debugger mode](https://developer.android.com/studio/debug/dev-options) on the developer tools
+4. Run ```yarn start``` to open the metro-bundler and get access to the server app on mobile
+5. Run ```yarn android``` to install the app on your **Android** or ```yarn ios``` to install on your **IOS**
 > If you create only one user, any date will appear on the app
 
 # :fire: Techs
@@ -131,25 +130,25 @@ In case you don't have an SSH key on your GitHub account, you can clone the proj
 ### Typescript (language)
 
 ### Node.js (server)
-- Express
-- CORS
-- Celebrate
-- Nodemailer
 - AWS (S3 and SES)
+- Celebrate
+- CORS
+- Express
+- Nodemailer
 - TypeORM
 
 ### React.js (web)
 - Axios
-- Unform
-- Styled Components
-- Yup
 - React Day Picker
+- Styled Components
+- Unform
+- Yup
 
 ### React Native (mobile)
 - Axios
-- Unform
-- Styled Components
 - React Navigation
+- Styled Components
+- Unform
 
 # :bug: Issues
 
