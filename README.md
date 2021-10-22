@@ -81,7 +81,7 @@
 - Yarn
 - MongoDB database
 - Postgres database
-- Redis database
+- Redis
 
 ### SSH
 
